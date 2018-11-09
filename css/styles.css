@@ -1,0 +1,144 @@
+/********Universal Styles*********/
+
+* {
+	box-sizing: border-box;
+}
+
+/*******Base Level Styles********/
+
+body {
+	font-family: 'EB Garamond', serif;
+	line-height: 1.5;
+    color: black;
+    padding-top: 37px;
+}
+p {
+    font-size: 2em;
+}
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+a {
+	text-decoration: none;
+}
+footer {
+    text-align: center;
+}
+
+/********Layout Styles********/
+
+/*Sticky nav header styles*/
+.mainHeader {
+    position: fixed;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+.socialNav li {
+    display: inline-block;
+}
+.menuToggle {
+    background: none;
+    border: none;
+    margin-top: 5px;
+}
+/*Generic site styles*/
+.mainWrapper {
+    min-height: calc(100vh - 110px);
+}
+.mainContent {
+    text-align: center;
+}
+.footerInfo {
+    text-align: center;
+    padding-bottom: 5px;
+}
+/*Project page styles*/
+.flex_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.flex_container > div {
+    width: 200px;
+    margin: 10px;
+}
+.projectWindow:hover {
+    border: solid 2px #fff;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, .4);
+}
+.caption {
+    font-size: 1em;
+}
+
+
+/********Media Queries*********/
+
+/*Tablet display layout*/
+@media (min-width: 321px){
+    body {
+        padding-top: 74px;
+    }
+    ul {
+        margin-block-end: .2em;
+        margin-block-start: .2em;
+    }
+    .mainWrapper {
+        min-height: calc(100vh - 160px);
+    }
+    .mainNav .socialNav {
+        padding: 0px;
+    }
+    .mainNav {
+        text-align: center;  
+    }
+    .mainNav li {
+		display: inline-block;
+		margin-left: 15px;
+    }
+    .socialNav li {
+        margin-left: 15px;
+    } 
+    .menuToggle {
+        display: none;
+    }
+    .nav {
+        display: block;
+        text-align: center;
+    }
+    .clearfix::after {
+		content: " ";
+		display: table;
+		clear: both;
+    }
+}
+/*PC display layout*/
+@media (min-width: 769px) {
+    body {
+        padding-top: 74px;
+    }
+    ul {
+        margin-block-end: 1em;
+        margin-block-start: 1em;
+    }
+    .mainWrapper {
+        min-height: calc(100vh - 148px);
+    }
+    .wrapper{
+        width: 90%;
+        margin: 0 auto;
+    } 
+    .mainNav {
+        float: left;
+        margin: 25px;
+    }
+    .socialNav {
+        float: right;
+        margin-right: 25px;
+    }
+}
