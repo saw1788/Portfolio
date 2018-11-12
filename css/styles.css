@@ -13,14 +13,19 @@ body {
     padding-top: 37px;
 }
 p {
-    font-size: 2em;
+    font-size: 1em;
 }
 ul {
     list-style-type: none;
     padding-inline-start: 0px;
 }
 a {
-	text-decoration: none;
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: blue;
+    text-decoration: underline;
 }
 footer {
     text-align: center;
@@ -38,6 +43,10 @@ footer {
     z-index: 1000;
     text-align: center;
 }
+.mainNav li {
+    font: initial;
+    font-size: larger;
+}
 .socialNav li {
     display: inline-block;
 }
@@ -50,6 +59,13 @@ footer {
 .mainWrapper {
     min-height: calc(100vh - 110px);
 }
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+.wrapper a {
+    text-decoration: underline;
+}
 .mainContent {
     text-align: center;
 }
@@ -58,22 +74,42 @@ footer {
     padding-bottom: 5px;
 }
 /*Project page styles*/
-.flex_container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+.grid_container{
+    border-bottom: 4px double black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .3fr auto 1fr;
 }
-.flex_container > div {
-    width: 200px;
-    margin: 10px;
+.box1 {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    justify-self: start;
+    align-self: center;
+    padding-left: 1em;
+}
+.box2 {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+}
+.box3 {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+}
+.box4 {
+    font-size: 1em;
+    grid-column: 1 / span 4;
+    grid-row: 3;
+    padding: 1em;
+}
+.projectWindow {
+    width: 100%;
+    height: auto;
 }
 .projectWindow:hover {
     border: solid 2px #fff;
     box-shadow: 0 5px 4px rgba(0, 0, 0, .4);
-}
-.caption {
-    font-size: 1em;
 }
 
 
@@ -94,12 +130,10 @@ footer {
     .mainNav .socialNav {
         padding: 0px;
     }
-    .mainNav {
-        text-align: center;  
-    }
     .mainNav li {
-		display: inline-block;
-		margin-left: 15px;
+        display: inline-block;
+        margin-left: 10px;
+        padding-left: 10px;
     }
     .socialNav li {
         margin-left: 15px;
@@ -107,38 +141,78 @@ footer {
     .menuToggle {
         display: none;
     }
-    .nav {
-        display: block;
-        text-align: center;
-    }
     .clearfix::after {
 		content: " ";
 		display: table;
 		clear: both;
     }
+    .grid_container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: .1fr 1fr;
+    }
+    .box1 {
+        grid-column: 1 / span 7;
+    }
+    .box2 {
+        grid-column: 8;
+    }
+    .box3 {
+        grid-column: 5 / span 8;
+        justify-self: center;
+        padding: 1em;
+    }
+    .box4 {
+        grid-row: 2;
+        justify-self: auto;
+        align-self: start;
+        margin: 0;
+    }
 }
 /*PC display layout*/
 @media (min-width: 769px) {
-    body {
-        padding-top: 74px;
+    p {
+        font-size: 2em;
     }
     ul {
         margin-block-end: 1em;
         margin-block-start: 1em;
     }
     .mainWrapper {
-        min-height: calc(100vh - 148px);
+        min-height: calc(100vh - 154px);
     }
     .wrapper{
         width: 90%;
-        margin: 0 auto;
     } 
     .mainNav {
         float: left;
         margin: 25px;
     }
+    .mainNav li {
+        border-left: solid 1px;
+    }
     .socialNav {
         float: right;
         margin-right: 25px;
+    }
+    .grid_container{
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .reverse {
+        direction: rtl;
+    }
+    .box1 {
+        grid-column: 1 / span 3;
+        justify-self: left;
+    }
+    .box2 {
+        grid-column: 4;
+    }
+    .box3 {
+        grid-row: 1 / span 4;
+        align-self: center;
+    }
+    .box4 {
+        grid-row: 2 / span 4;
+        text-align: left;
     }
 }
